@@ -12,10 +12,10 @@
         <a href="index.html" class="logo">OPUS ON SWAIN</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="bios.html">The Faculty</a>
+            <a href="bios.html">Faculty</a>
             <a href="students.html" class="active">Students</a>
-            <a href="index.html#schedule">Schedule</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="policy.html">Policy</a>
         </div>
     </nav>
 
@@ -23,59 +23,169 @@
         <div class="section-header">
             <h2>Student Spotlight</h2>
             <div class="divider"></div>
-            <p>Meet the diverse community of musicians at Opus on Swain.</p>
+            <p>Click on any student card to read their full musical story.</p>
         </div>
 
         <div class="student-grid">
             
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1519238263496-6361932a032a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Edgar"></div>
-                <div class="student-info"><h3 class="student-name">Edgar</h3><span class="student-level">Beginner, Age 8</span><p class="student-bio">Full of energy! Turning enthusiasm into solid technique.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/edgar.png" alt="Edgar Hufford">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Edgar Hufford</h3>
+                    <span class="student-level">Beginner, Age 8</span>
+                    <p class="student-bio">Full of energy! Turning enthusiasm into solid technique.</p>
+                    
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Edgar joined Opus on Swain just six months ago, bringing a whirlwind of energy to the studio. Like many 8-year-olds, his initial challenge was channeling his enthusiasm into focused finger work. Through rhythm games and short, high-energy practice sessions, Edgar has made incredible progress.</p>
+                        <p>He is currently working on <em>Adventures in Keyland</em> and loves anything that sounds "fast and loud." His goal for this year is to learn the theme song from Star Wars. We are working on building his hand shape so he can play those Jedi themes with power without straining his hands.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Victor"></div>
-                <div class="student-info"><h3 class="student-name">Victor Gamez</h3><span class="student-level">Advanced, Age 17</span><p class="student-bio">Preparing for conservatory auditions with Rachmaninoff.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/victor.png" alt="Victor Gamez">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Victor Gamez</h3>
+                    <span class="student-level">Advanced, Age 17</span>
+                    <p class="student-bio">Preparing for conservatory auditions. Exploring Rachmaninoff.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Victor is one of our most advanced students, currently preparing for rigorous college auditions. He has a natural gravity at the piano, producing a deep, resonant tone that belies his age. He has been studying with Ding for four years.</p>
+                        <p>Currently, Victor is tackling Rachmaninoff's <em>Prelude in G Minor</em> and a Beethoven Sonata. His lessons focus on the "architecture" of long pieces—how to maintain tension and release over 10 or 15 minutes of music. Outside of piano, Victor composes his own electronic music, which gives him a unique perspective on classical harmony.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Lily"></div>
-                <div class="student-info"><h3 class="student-name">Lily Chen</h3><span class="student-level">Intermediate, Age 14</span><p class="student-bio">A Debussy lover exploring rich soundscapes in our accessible studio.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/lily.png" alt="Lily Chen">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Lily Chen</h3>
+                    <span class="student-level">Adult Returner</span>
+                    <p class="student-bio">A busy professional finding mindfulness through Chopin.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Lily played piano as a child but stopped during college. Now a marketing executive, she returned to the piano looking for a way to disconnect from screens and reconnect with herself. She calls her Wednesday evening lessons her "therapy hour."</p>
+                        <p>She has a special affinity for the Romantic era. We are currently working on Chopin's Nocturnes, focusing on rubato and "bel canto" singing tone. Lily proves that it is never too late to reclaim a passion, and her playing is filled with a sensitivity that only comes with life experience.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1554721299-e0a8c3655c43?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sarah"></div>
-                <div class="student-info"><h3 class="student-name">Sarah Jenkins</h3><span class="student-level">Adult Returner</span><p class="student-bio">Finding mindfulness through weekly Chopin sessions.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/sarah.png" alt="Sarah Jenkins">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Sarah Jenkins</h3>
+                    <span class="student-level">Intermediate, Age 14</span>
+                    <p class="student-bio">A Debussy lover exploring rich soundscapes and pedal layering.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Sarah has an incredibly sensitive ear. While many students love fast and flashy pieces, Sarah is drawn to color and atmosphere. She was the one who asked to learn Debussy, fascinated by how the piano can sound like water or wind.</p>
+                        <p>Her current focus is on pedal technique—learning that the pedal isn't just an on/off switch, but a tool for mixing colors. She is preparing <em>The Girl with the Flaxen Hair</em> for the Spring recital. Sarah also plays flute in her school band, which helps her phrasing on the piano.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mateo"></div>
-                <div class="student-info"><h3 class="student-name">Mateo Cruz</h3><span class="student-level">Early Advanced, Age 10</span><p class="student-bio">Mixing classical structure with jazz improvisation.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/mateo.png" alt="Mateo Cruz">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Mateo Cruz</h3>
+                    <span class="student-level">Early Advanced, Age 10</span>
+                    <p class="student-bio">Mixing classical structure with jazz improvisation. Perfect pitch.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Mateo is a rare talent. Discovering he had perfect pitch at age 6, he can hear a song on the radio and play it back almost instantly. The challenge (and fun) of teaching Mateo is getting him to read the notes rather than just using his ears!</p>
+                        <p>We use a hybrid curriculum for Mateo. Half the lesson is standard classical repertoire (Bach Inventions) to build discipline, and the other half is Jazz improvisation, where he learns to read lead sheets. He is a prime example of how classical training serves all genres.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1456327102063-fb5054efe647?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Aris"></div>
-                <div class="student-info"><h3 class="student-name">Dr. Aris Thorne</h3><span class="student-level">Adult Hobbyist</span><p class="student-bio">Retired professor analyzing Bach's fugal structures.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/aris.png" alt="Dr. Aris Thorne">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Dr. Aris Thorne</h3>
+                    <span class="student-level">Adult Hobbyist</span>
+                    <p class="student-bio">Retired professor analyzing the history behind Bach's fugues.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Dr. Thorne approaches piano with the mind of an academic. A retired history professor, he isn't satisfied with just playing the notes; he wants to know why Bach wrote them that way. His lessons often turn into fascinating discussions about 18th-century counterpoint.</p>
+                        <p>He admits that his fingers aren't as fast as they used to be, but his understanding of musical structure is profound. He is currently working through the <em>Well-Tempered Clavier</em>, treating each prelude and fugue as a puzzle to be solved and savored.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1596386461350-326cc5693108?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chloe"></div>
-                <div class="student-info"><h3 class="student-name">Chloe Kim</h3><span class="student-level">Competitive, Age 15</span><p class="student-bio">Focused competitor mastering stage presence.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/chloe.png" alt="Chloe Kim">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Chloe Kim</h3>
+                    <span class="student-level">Competitive, Age 15</span>
+                    <p class="student-bio">Mastering virtuoso works and overcoming performance anxiety.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Chloe is a powerhouse. Driven and disciplined, she enters local and state competitions regularly. However, last year she struggled with severe stage fright. We have shifted our focus from "perfection" to "communication."</p>
+                        <p>By incorporating mock performances and mental visualization techniques into her lessons, Chloe is learning to trust her preparation. She recently performed Liszt's <em>Liebestraum</em> with shaking hands but a singing heart, a massive breakthrough for her confidence.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1508280756091-9bdd7ef1f463?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jackson"></div>
-                <div class="student-info"><h3 class="student-name">Jackson Wright</h3><span class="student-level">Intermediate, Age 12</span><p class="student-bio">Soccer player balancing sports and Sonatinas.</p></div>
+            <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/jackson.png" alt="Jackson Wright">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Jackson Wright</h3>
+                    <span class="student-level">Intermediate, Age 12</span>
+                    <p class="student-bio">Soccer star balancing sports and Sonatinas.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Jackson breaks the stereotype that you can't be an athlete and a musician. As a competitive soccer player, his schedule is packed, but he treats piano practice with the same dedication as his drills. He has incredibly strong fingers and natural coordination.</p>
+                        <p>We focus on "efficient practice" techniques for Jackson—how to get the most out of 20 minutes a day. He loves energetic, rhythmic pieces by Kabalevsky and Bartók that match his high-energy personality.</p>
+                    </div>
+                </div>
             </div>
 
-             <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Anya"></div>
-                <div class="student-info"><h3 class="student-name">Anya Sharma</h3><span class="student-level">College Student</span><p class="student-bio">Biology major using piano as a creative escape.</p></div>
+             <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/anya.png" alt="Anya Sharma">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Anya Sharma</h3>
+                    <span class="student-level">College Student</span>
+                    <p class="student-bio">Biology major using piano as a creative escape.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Anya is a Biology major at IU who needed a creative outlet away from the lab. She played casually in high school but wanted to refine her technique without the pressure of exams. Piano is her "brain break."</p>
+                        <p>She is currently exploring the lighter side of classical music—Mozart Sonatas and Satie's Gymnopédies. Anya brings a wonderful curiosity to her lessons, often drawing parallels between the patterns in biology and the patterns in music theory.</p>
+                    </div>
+                </div>
             </div>
 
-             <div class="student-card">
-                <div class="student-photo"><img src="https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Benji"></div>
-                <div class="student-info"><h3 class="student-name">Benji Croft</h3><span class="student-level">Age 5</span><p class="student-bio">Learning rhythm games and keyboard geography.</p></div>
+             <div class="student-card" onclick="openModal(this)">
+                <div class="student-photo">
+                    <img src="images/benji.png" alt="Benji Croft">
+                </div>
+                <div class="student-info">
+                    <h3 class="student-name">Benji Croft</h3>
+                    <span class="student-level">Age 5</span>
+                    <p class="student-bio">Our studio mascot! Learning rhythm games and animal sounds.</p>
+
+                    <div class="full-bio-content" style="display:none;">
+                        <p>Benji is our youngest student and, unofficially, the studio mascot. At age 5, sitting still is a challenge, so his lessons are full of movement. We march to the beat, clap rhythms, and use "animal sounds" to learn keyboard geography (Low Lion vs. High Bird).</p>
+                        <p>The goal at this stage isn't complex repertoire, but falling in love with the instrument. Benji recently learned his first two-handed song, "Hot Cross Buns," and performed it for his grandparents with a very dramatic bow!</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -85,9 +195,59 @@
         </div>
     </section>
 
+    <div id="student-modal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <img id="modal-img" src="" alt="">
+                <div class="modal-header-text">
+                    <h3 id="modal-name">Student Name</h3>
+                    <span id="modal-level">Level</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="modal-bio">
+                    </div>
+            </div>
+        </div>
+    </div>
+
     <footer style="margin-top:0;">
         <p>&copy; 2024 Opus on Swain Piano Studio.</p>
     </footer>
+
+    <script>
+        // 打开弹窗
+        function openModal(card) {
+            // 获取卡片中的数据
+            const imgSrc = card.querySelector('img').src;
+            const name = card.querySelector('.student-name').innerText;
+            const level = card.querySelector('.student-level').innerText;
+            const fullBio = card.querySelector('.full-bio-content').innerHTML;
+
+            // 填充到弹窗中
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('modal-name').innerText = name;
+            document.getElementById('modal-level').innerText = level;
+            document.getElementById('modal-bio').innerHTML = fullBio;
+
+            // 显示弹窗
+            document.getElementById('student-modal').style.display = 'flex';
+        }
+
+        // 关闭弹窗
+        function closeModal(event) {
+            // 如果传了 event，说明是点击背景关闭；如果没传，是点击X关闭
+            document.getElementById('student-modal').style.display = 'none';
+        }
+        
+        // 按 ESC 键也可以关闭
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                document.getElementById('student-modal').style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
