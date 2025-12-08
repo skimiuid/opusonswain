@@ -198,3 +198,81 @@ footer { background-color: var(--primary-bg); color: var(--text-light); text-ali
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
+
+/* --- 移动端适配 (Responsive Design) --- */
+
+/* 默认隐藏汉堡按钮 */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: 0.3s;
+}
+
+/* 当屏幕宽度小于 768px (手机/平板) 时应用 */
+@media screen and (max-width: 768px) {
+    
+    /* 1. 调整整体内边距，防止手机上字太靠边 */
+    section {
+        padding: 40px 5%; 
+    }
+    
+    h1 { font-size: 2.5rem; } /* 标题稍微改小一点 */
+
+    /* 2. 显示汉堡按钮 */
+    .hamburger {
+        display: flex;
+    }
+
+    /* 3. 改造导航链接区域 */
+    .nav-links {
+        display: none; /* 默认隐藏 */
+        position: absolute;
+        top: 100%; /* 在导航栏正下方 */
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+    }
+
+    .nav-links a {
+        margin: 15px 0; /* 增加垂直间距 */
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 当添加了 .active 类时，显示菜单 */
+    .nav-links.active {
+        display: flex;
+    }
+    
+    /* 4. 修复学生卡片在手机上的显示 (变为一列) */
+    .student-grid, .gallery-grid, .bio-full-container {
+        grid-template-columns: 1fr; /* 强制单列 */
+    }
+    
+    .event-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .event-info {
+        padding: 0;
+        border: none;
+    }
+}
