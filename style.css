@@ -1,17 +1,21 @@
-/* style.css - Opus on Swain (Mobile Fixed Version) */
+/* style.css - Opus on Swain (Ultimate Mobile Fix) */
 
 :root {
-    --primary-bg: #000000;      /* 纯黑背景 */
-    --secondary-bg: #ffffff;    /* 白色内容区 */
-    --accent-color: #d4af37;    /* 香槟金 */
-    --text-dark: #333333;       /* 深灰文字 */
-    --text-light: #f4f4f4;      /* 浅白文字 */
-    --gray-bg: #f5f5f7;         /* Apple 风格浅灰 */
-    --nav-bg: rgba(20, 20, 20, 0.85); /* 导航栏深色半透明 */
+    --primary-bg: #000000;
+    --secondary-bg: #ffffff;
+    --accent-color: #d4af37;
+    --text-dark: #333333;
+    --text-light: #f4f4f4;
+    --gray-bg: #f5f5f7;
+    --nav-bg: rgba(20, 20, 20, 0.85);
 }
 
-/* --- 核心修复：防止 padding 撑破屏幕 --- */
+/* --- 核心修复 1: 全局盒模型与防溢出 --- */
 * { box-sizing: border-box; }
+html, body { 
+    max-width: 100%; 
+    overflow-x: hidden; /* 禁止任何形式的左右滚动 */
+}
 
 html { scroll-behavior: smooth; }
 body { 
@@ -26,14 +30,14 @@ body {
 h1, h2, h3, h4 { font-family: 'Georgia', 'Times New Roman', serif; font-weight: normal; }
 a { text-decoration: none; transition: all 0.3s ease; color: inherit; }
 
-/* 通用 Section 设置 */
+/* 通用 Section */
 section { 
     padding: 120px 8%; 
     background-color: var(--secondary-bg); 
-    overflow-x: hidden; /* 双重保险，防止横向滚动 */
+    width: 100%; /* 确保不超过屏幕 */
 }
 
-/* --- 沉浸式导航栏 --- */
+/* --- 导航栏 --- */
 nav { 
     display: flex; 
     justify-content: space-between; 
@@ -45,6 +49,7 @@ nav {
     position: sticky; 
     top: 0; 
     z-index: 1000; 
+    width: 100%;
 }
 
 .logo { 
@@ -79,11 +84,10 @@ nav {
     border: 1px solid var(--accent-color); 
     cursor: pointer; 
     transition: transform 0.2s;
-    text-align: center; /* 确保文字居中 */
+    text-align: center; 
 }
 .btn:hover { transform: scale(1.05); background-color: #c49f27; }
 
-/* 透明按钮变体 */
 .btn.transparent {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.5);
@@ -98,10 +102,10 @@ nav {
 .btn-small:hover { border-color: var(--primary-bg); color: var(--primary-bg); background: transparent; }
 
 .divider { width: 60px; height: 3px; background-color: var(--accent-color); margin: 15px auto 30px auto; }
-.section-header { text-align: center; margin-bottom: 80px; padding: 0 10px; }
+.section-header { text-align: center; margin-bottom: 80px; padding: 0 10px; width: 100%; }
 .section-header h2 { font-size: 3rem; margin-bottom: 15px; color: var(--primary-bg); }
 
-/* --- 首页 Hero (全屏沉浸版) --- */
+/* --- 首页 Hero --- */
 header { 
     height: 100vh; 
     min-height: 600px;
@@ -113,7 +117,8 @@ header {
     text-align: center; 
     color: var(--text-light); 
     margin-top: 0;
-    padding: 0 20px; /* 防止手机端文字贴边 */
+    padding: 0 20px; 
+    width: 100%;
 }
 
 header h1 { 
@@ -123,6 +128,7 @@ header h1 {
     line-height: 1.1;
     text-shadow: 0 10px 30px rgba(0,0,0,0.5);
     text-transform: uppercase;
+    max-width: 100%;
 }
 
 header .subtitle { 
@@ -148,11 +154,10 @@ header .cta-group { animation-delay: 0.5s; }
 
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-/* --- Philosophy (竖版液态玻璃风格) --- */
+/* --- Philosophy (竖版液态玻璃) --- */
 #philosophy {
     background: linear-gradient(180deg, #ffffff 0%, #f0f0f5 100%);
     position: relative;
-    overflow: hidden;
 }
 
 #philosophy::before {
@@ -175,6 +180,7 @@ header .cta-group { animation-delay: 0.5s; }
     margin: 0 auto; 
     position: relative;
     z-index: 1;
+    width: 100%; /* 确保宽度 */
 }
 
 .philosophy-item {
@@ -227,7 +233,11 @@ header .cta-group { animation-delay: 0.5s; }
 }
 
 /* --- Events (优雅列表风格) --- */
-.events-container { max-width: 900px; margin: 0 auto 80px auto; width: 100%; }
+.events-container { 
+    max-width: 900px; 
+    margin: 0 auto 80px auto; 
+    width: 100%; /* 关键：撑满父容器 */
+}
 
 .event-card { 
     display: flex; 
@@ -238,7 +248,7 @@ header .cta-group { animation-delay: 0.5s; }
     border-bottom: 1px solid rgba(0,0,0,0.08); 
     padding: 40px 0; 
     transition: transform 0.3s ease;
-    width: 100%; /* 确保不超出容器 */
+    width: 100%; /* 关键：撑满，不给固定宽度 */
 }
 
 .event-card:hover { transform: translateX(10px); }
@@ -251,8 +261,21 @@ header .cta-group { animation-delay: 0.5s; }
 .event-info h4 { margin: 0 0 8px 0; font-size: 1.4rem; color: var(--primary-bg); }
 .event-info p { margin: 0; color: #888; font-size: 1rem; }
 
-.calendar-wrapper { max-width: 900px; margin: 0 auto; text-align: center; width: 100%; }
-.calendar-frame { width: 100%; height: 600px; border: none; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+/* --- 日历容器核心修复 --- */
+.calendar-wrapper { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    text-align: center; 
+    width: 100%; /* 确保撑满 */
+}
+
+.calendar-frame { 
+    width: 100% !important; /* 强制 iframe 宽度跟随容器，防止撑破 */
+    height: 600px; 
+    border: none; 
+    border-radius: 12px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+}
 
 /* --- Bio / Student / Gallery / Policy --- */
 .bio-full-container { max-width: 1000px; margin: 0 auto; }
@@ -292,11 +315,9 @@ header .cta-group { animation-delay: 0.5s; }
 .tuition-table th, .tuition-table td { text-align: left; padding: 15px; border-bottom: 1px solid #eee; }
 .tuition-table th { color: var(--accent-color); font-weight: normal; font-family: 'Georgia', serif; font-size: 1.1rem; }
 
-/* --- Footer --- */
 footer { background-color: #111; color: #888; text-align: center; padding: 80px 20px; margin-top: 0; }
 .contact-info p { margin: 5px 0; color: #ccc; }
 
-/* --- Modal --- */
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 2000; justify-content: center; align-items: center; animation: fadeIn 0.3s ease; backdrop-filter: blur(5px); }
 .modal-content { background-color: #fff; width: 90%; max-width: 700px; border-radius: 16px; overflow: hidden; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.5); display: flex; flex-direction: column; max-height: 90vh; }
 .modal-header { background-color: #111; color: #fff; padding: 30px; display: flex; align-items: center; gap: 25px; }
@@ -312,34 +333,38 @@ footer { background-color: #111; color: #888; text-align: center; padding: 80px 
 .hamburger span { display: block; width: 28px; height: 2px; background-color: #fff; transition: 0.3s; }
 
 @media screen and (max-width: 768px) {
-    /* 1. 修复边距：所有 Section 在手机上边距减小，防止内容太窄 */
-    section { padding: 60px 5%; }
+    /* 1. 修复边距：大幅减少 padding，把空间留给内容 */
+    section { padding: 80px 5%; }
     
-    /* 2. 修复标题：min-content 强制让标题按单词换行，实现三行效果 */
-    /* OPUS / ON / SWAIN */
+    /* 2. 修复标题：使用 vw (视口宽度) 单位，保证文字永远按比例缩放 */
     header h1 { 
-        font-size: 4rem; /* 稍微缩小以适应屏幕 */
-        width: min-content; /* 关键：按单词宽度换行 */
+        font-size: 13vw; /* 关键：让字体大小随屏幕宽度变化，大约占 13% */
+        width: 80%; /* 限制总宽度 */
         margin: 0 auto; 
-        line-height: 1.1;
+        line-height: 1.2;
         letter-spacing: 5px;
+        word-wrap: break-word; /* 防止长单词溢出 */
     }
     
-    header .subtitle { font-size: 1rem; letter-spacing: 3px; }
+    header .subtitle { 
+        font-size: 0.9rem; 
+        letter-spacing: 3px; 
+    }
 
-    /* 3. 修复按钮：改为垂直堆叠 (Column)，并占满宽度 */
+    /* 3. 修复按钮：强制竖排，并拉满宽度 */
     header .cta-group {
         display: flex;
         flex-direction: column;
-        gap: 15px; /* 按钮间距 */
+        gap: 15px; 
         width: 100%;
-        max-width: 300px; /* 防止按钮过宽 */
+        max-width: 280px; /* 限制按钮最大宽度，防止太丑 */
     }
     
     .btn, .btn.transparent {
-        width: 100%; /* 按钮撑满 */
-        margin: 0 !important; /* 强制覆盖 margin-left */
-        padding: 15px 0;
+        width: 100%; 
+        margin: 0 !important; 
+        padding: 12px 0;
+        display: block; /* 确保是块级元素 */
     }
     
     .hamburger { display: flex; }
@@ -347,19 +372,36 @@ footer { background-color: #111; color: #888; text-align: center; padding: 80px 
     .nav-links.active { display: flex; }
     .nav-links a { margin: 20px 0; color: #fff; font-size: 1.1rem; }
     
-    /* 4. 修复 Schedule：确保 flex 变为列，且内容不溢出 */
+    /* 4. 修复 Schedule：强制所有内容不超出 100% */
     .event-card { 
         flex-direction: column; 
         align-items: flex-start; 
-        gap: 20px; 
+        gap: 15px; 
         text-align: left; 
-        padding: 30px 0;
+        padding: 25px 0;
+        width: 100%; /* 强制 */
     }
-    .event-date { text-align: left; display: flex; align-items: baseline; gap: 10px; }
-    .event-info { padding: 0; }
-    .btn-small { width: 100%; text-align: center; }
     
-    .philosophy-item { padding: 30px; }
+    .event-info { 
+        padding: 0; 
+        width: 100%; /* 强制 */
+    }
+    
+    .event-date { 
+        text-align: left; 
+        display: flex; 
+        align-items: baseline; 
+        gap: 10px; 
+    }
+    
+    /* 让按钮也居中适应 */
+    .event-card .btn-small { 
+        width: 100%; 
+        text-align: center; 
+        margin-top: 10px;
+    }
+    
+    .philosophy-item { padding: 25px; }
     .philosophy-item h3::before { display: none; }
     
     .student-grid, .gallery-grid, .bio-full-container { grid-template-columns: 1fr; }
