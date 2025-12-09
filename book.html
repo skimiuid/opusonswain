@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Trial Lesson | Opus on Swain</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">OPUS ON SWAIN</a>
+        
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="bios.html">Faculty</a>
+            <a href="students.html">Students</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="policy.html">Policy</a>
+        </div>
+    </nav>
+
+    <header style="height: 40vh; min-height: 300px; background: radial-gradient(circle at center, #2c2c2e 0%, #000000 90%);">
+        <h1 style="font-size: 3rem; letter-spacing: 5px;">BOOK A TRIAL</h1>
+        <p class="subtitle" style="margin-top: 10px;">Start Your Musical Journey</p>
+    </header>
+
+    <section>
+        <div class="section-header">
+            <h2>Student Questionnaire</h2>
+            <p style="color:#888; margin-top:10px;">Please fill out the form below. We will reach out within 24 hours to schedule your session.</p>
+        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="booking-form">
+            
+            <h3 class="form-section-title">Contact Information</h3>
+            
+            <div class="form-group">
+                <label for="parent-name">Parent/Guardian Name</label>
+                <input type="text" id="parent-name" name="Parent Name" required placeholder="Your Full Name">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="Phone" required placeholder="(555) 123-4567">
+                </div>
+            </div>
+
+            <h3 class="form-section-title">Student Details</h3>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" name="Student Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Student Age</label>
+                    <input type="number" id="age" name="Student Age" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Prior Experience</label>
+                <select id="experience" name="Experience Level">
+                    <option value="Complete Beginner">Complete Beginner (No experience)</option>
+                    <option value="Beginner">Beginner (Less than 1 year)</option>
+                    <option value="Intermediate">Intermediate (1-3 years)</option>
+                    <option value="Advanced">Advanced (4+ years)</option>
+                    <option value="Adult Hobbyist">Adult Hobbyist</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goals">Musical Goals & Interests</label>
+                <textarea id="goals" name="Goals" rows="4" placeholder="e.g., Wants to learn classical, improve technique, or just play for fun..."></textarea>
+            </div>
+
+            <h3 class="form-section-title">Availability</h3>
+            
+            <div class="form-group">
+                <label for="availability">Preferred Days/Times</label>
+                <input type="text" id="availability" name="Availability" placeholder="e.g., Weekdays after 4pm, Saturday mornings...">
+            </div>
+
+            <button type="submit" class="btn submit-btn">Send Request</button>
+            
+        </form>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Opus on Swain Piano Studio.</p>
+    </footer>
+
+</body>
+</html>
