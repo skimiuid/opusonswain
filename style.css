@@ -1,63 +1,99 @@
-/* style.css - Opus on Swain (Mobile Form Fixed) */
+/* style.css - Opus on Swain (Final Master Version) */
 
 :root {
-    --primary-bg: #000000;
-    --secondary-bg: #ffffff;
-    --accent-color: #d4af37;
-    --text-dark: #333333;
-    --text-light: #f4f4f4;
-    --gray-bg: #f5f5f7;
-    --nav-bg: rgba(20, 20, 20, 0.85);
+    --primary-bg: #000000;      /* 纯黑背景 */
+    --secondary-bg: #ffffff;    /* 白色内容区 */
+    --accent-color: #d4af37;    /* 香槟金 */
+    --text-dark: #333333;       /* 深灰文字 */
+    --text-light: #f4f4f4;      /* 浅白文字 */
+    --gray-bg: #f5f5f7;         /* Apple 风格浅灰 */
+    --nav-bg: rgba(20, 20, 20, 0.85); /* 导航栏深色半透明 */
 }
 
 /* --- 全局基础设置 --- */
-* { box-sizing: border-box; }
-html, body { max-width: 100%; overflow-x: hidden; }
+* { box-sizing: border-box; } /* 核心：防止边距撑破布局 */
+html, body { max-width: 100%; overflow-x: hidden; } /* 防止横向滚动 */
 
 html { scroll-behavior: smooth; }
 body { 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-    margin: 0; padding: 0; line-height: 1.7; 
-    color: var(--text-dark); background-color: var(--primary-bg); 
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.7; 
+    color: var(--text-dark); 
+    background-color: var(--primary-bg); 
 }
 
 h1, h2, h3, h4 { font-family: 'Georgia', 'Times New Roman', serif; font-weight: normal; }
 a { text-decoration: none; transition: all 0.3s ease; color: inherit; }
 
-/* 通用 Section */
-section { padding: 120px 8%; background-color: var(--secondary-bg); width: 100%; }
+/* 通用 Section 设置 */
+section { 
+    padding: 120px 8%; 
+    background-color: var(--secondary-bg); 
+    width: 100%; 
+}
 
-/* --- 导航栏 --- */
+/* --- 沉浸式导航栏 --- */
 nav { 
-    display: flex; justify-content: space-between; align-items: center; 
-    padding: 20px 5%; background-color: var(--nav-bg); backdrop-filter: blur(20px); 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 5%; 
+    background-color: var(--nav-bg); 
+    backdrop-filter: blur(20px); 
     border-bottom: 1px solid rgba(255,255,255,0.1); 
-    position: sticky; top: 0; z-index: 1000; width: 100%;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    width: 100%;
 }
 
 .logo { 
-    font-family: 'Georgia', serif; font-size: 1.4rem; font-weight: bold; 
-    letter-spacing: 1px; color: var(--text-light); border: 2px solid var(--text-light); padding: 5px 15px; 
+    font-family: 'Georgia', serif; 
+    font-size: 1.4rem; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+    color: var(--text-light); 
+    border: 2px solid var(--text-light); 
+    padding: 5px 15px; 
 }
 
 .nav-links a { 
-    color: rgba(255, 255, 255, 0.8); margin-left: 30px; font-size: 0.9rem; 
-    font-weight: 500; text-transform: uppercase; letter-spacing: 1px; 
+    color: rgba(255, 255, 255, 0.8); 
+    margin-left: 30px; 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
 
 /* --- 按钮组件 --- */
 .btn { 
-    display: inline-block; padding: 15px 40px; background-color: var(--accent-color); 
-    color: white; border-radius: 30px; letter-spacing: 1px; font-size: 1rem; 
-    border: 1px solid var(--accent-color); cursor: pointer; transition: transform 0.2s; text-align: center; 
+    display: inline-block; 
+    padding: 15px 40px; 
+    background-color: var(--accent-color); 
+    color: white; 
+    border-radius: 30px; 
+    letter-spacing: 1px; 
+    font-size: 1rem; 
+    border: 1px solid var(--accent-color); 
+    cursor: pointer; 
+    transition: transform 0.2s;
+    text-align: center; 
 }
 .btn:hover { transform: scale(1.05); background-color: #c49f27; }
 
 .btn.transparent {
-    background: transparent; border: 1px solid rgba(255,255,255,0.5); margin-left: 10px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    margin-left: 10px;
 }
-.btn.transparent:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+.btn.transparent:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+}
 
 .btn-small { padding: 8px 25px; font-size: 0.85rem; border: 1px solid #ddd; color: #555; border-radius: 20px; transition: all 0.3s; }
 .btn-small:hover { border-color: var(--primary-bg); color: var(--primary-bg); background: transparent; }
@@ -66,77 +102,178 @@ nav {
 .section-header { text-align: center; margin-bottom: 80px; padding: 0 10px; width: 100%; }
 .section-header h2 { font-size: 3rem; margin-bottom: 15px; color: var(--primary-bg); }
 
-/* --- 首页 Hero --- */
+/* --- 首页 Hero (全屏沉浸版) --- */
 header { 
-    height: 100vh; min-height: 600px; 
+    height: 100vh; 
+    min-height: 600px;
     background: radial-gradient(circle at center, #2c2c2e 0%, #000000 90%);
-    display: flex; flex-direction: column; justify-content: center; align-items: center; 
-    text-align: center; color: var(--text-light); margin-top: 0; padding: 0 20px; width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: var(--text-light); 
+    margin-top: 0;
+    padding: 0 20px; 
+    width: 100%;
 }
 
 header h1 { 
-    font-size: 6rem; margin: 0; letter-spacing: 12px; line-height: 1.1; 
-    text-shadow: 0 10px 30px rgba(0,0,0,0.5); text-transform: uppercase; max-width: 100%;
+    font-size: 6rem; 
+    margin: 0; 
+    letter-spacing: 12px; 
+    line-height: 1.1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    max-width: 100%;
 }
 
 header .subtitle { 
-    font-size: 1.5rem; font-weight: 300; letter-spacing: 6px; 
-    margin-top: 25px; text-transform: uppercase; color: var(--accent-color); opacity: 0.9;
+    font-size: 1.5rem; 
+    font-weight: 300; 
+    letter-spacing: 6px; 
+    margin-top: 25px; 
+    text-transform: uppercase; 
+    color: var(--accent-color); 
+    opacity: 0.9;
 }
 
 header .cta-group { margin-top: 60px; }
 
 /* 进场动画 */
 header h1, header .subtitle, header .cta-group {
-    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; transform: translateY(30px); 
+    animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+    opacity: 0; 
+    transform: translateY(30px); 
 }
 header .subtitle { animation-delay: 0.2s; }
 header .cta-group { animation-delay: 0.5s; }
+
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-/* --- Philosophy --- */
-#philosophy { background: linear-gradient(180deg, #ffffff 0%, #f0f0f5 100%); position: relative; }
-#philosophy::before {
-    content: ''; position: absolute; top: -20%; left: -10%; width: 60%; height: 60%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%); filter: blur(80px); z-index: 0;
+/* --- Philosophy (竖版液态玻璃) --- */
+#philosophy {
+    background: linear-gradient(180deg, #ffffff 0%, #f0f0f5 100%);
+    position: relative;
 }
-.philosophy-grid {
-    display: flex; flex-direction: column; gap: 30px; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; width: 100%;
-}
-.philosophy-item {
-    background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.9); border-top: 1px solid rgba(255, 255, 255, 1); border-bottom: 1px solid rgba(200, 200, 200, 0.2); 
-    border-radius: 24px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.5); 
-    padding: 40px; text-align: left; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-.philosophy-item:hover {
-    transform: translateY(-5px) scale(1.02); background: rgba(255, 255, 255, 0.85); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-}
-.philosophy-item h3 {
-    font-size: 1.6rem; color: var(--primary-bg); margin: 0 0 15px 0; font-weight: bold; letter-spacing: 0.5px; display: flex; align-items: center;
-}
-.philosophy-item h3::before {
-    content: ''; display: inline-block; width: 8px; height: 8px; background-color: var(--accent-color); border-radius: 50%; margin-right: 15px; box-shadow: 0 0 10px var(--accent-color);
-}
-.philosophy-item p { font-size: 1.05rem; color: #555; line-height: 1.8; margin: 0; padding-left: 23px; }
 
-/* --- Events --- */
-.events-container { max-width: 900px; margin: 0 auto 80px auto; width: 100%; }
-.event-card { 
-    display: flex; justify-content: space-between; align-items: center; background: transparent; 
-    border: none; border-bottom: 1px solid rgba(0,0,0,0.08); padding: 40px 0; transition: transform 0.3s ease; width: 100%;
+#philosophy::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
 }
+
+.philosophy-grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.philosophy-item {
+    background: rgba(255, 255, 255, 0.65); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9); 
+    border-top: 1px solid rgba(255, 255, 255, 1); 
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2); 
+    border-radius: 24px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.5); 
+    padding: 40px;
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.85); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-bg);
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.philosophy-item h3::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.philosophy-item p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+    padding-left: 23px;
+}
+
+/* --- Events / Schedule --- */
+.events-container { 
+    max-width: 900px; 
+    margin: 0 auto 80px auto; 
+    width: 100%; 
+}
+
+.event-card { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 1px solid rgba(0,0,0,0.08); 
+    padding: 40px 0; 
+    transition: transform 0.3s ease;
+    width: 100%; 
+}
+
 .event-card:hover { transform: translateX(10px); }
+
 .event-date { text-align: center; min-width: 100px; color: var(--primary-bg); }
 .event-date .day { font-size: 3rem; font-weight: 300; line-height: 1; display: block; }
 .event-date .month { font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-color); margin-top: 5px; display: block;}
+
 .event-info { flex-grow: 1; padding: 0 40px; }
 .event-info h4 { margin: 0 0 8px 0; font-size: 1.4rem; color: var(--primary-bg); }
 .event-info p { margin: 0; color: #888; font-size: 1rem; }
-.calendar-wrapper { max-width: 900px; margin: 0 auto; text-align: center; width: 100%; }
-.calendar-frame { width: 100% !important; height: 600px; border: none; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
 
-/* --- Bio / Student / Gallery / Policy --- */
+.calendar-wrapper { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    text-align: center; 
+    width: 100%; 
+}
+
+.calendar-frame { 
+    width: 100% !important; 
+    height: 600px; 
+    border: none; 
+    border-radius: 12px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+}
+
+/* --- Bio / Student Cards --- */
 .bio-full-container { max-width: 1000px; margin: 0 auto; }
 .bio-profile { display: flex; gap: 50px; margin-bottom: 80px; align-items: flex-start; }
 .bio-img { flex: 1; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
@@ -145,7 +282,7 @@ header .cta-group { animation-delay: 0.5s; }
 .bio-text h3 { font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; color: var(--primary-bg); }
 .bio-title { color: var(--accent-color); font-size: 1.1rem; font-weight: bold; margin-bottom: 20px; display: block; text-transform: uppercase; }
 
-.student-grid, .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; }
+.student-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; }
 .student-card { background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: transform 0.3s; cursor: pointer; }
 .student-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
 .student-photo { height: 260px; overflow: hidden; }
@@ -156,6 +293,8 @@ header .cta-group { animation-delay: 0.5s; }
 .student-level { font-size: 0.85rem; color: var(--accent-color); font-weight: bold; text-transform: uppercase; margin-bottom: 15px; display: block; }
 .student-bio { font-size: 0.95rem; color: #666; }
 
+/* --- Gallery & Studio Grid --- */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
 .video-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -163,6 +302,18 @@ header .cta-group { animation-delay: 0.5s; }
 .video-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 5px; display: block; }
 .video-desc { font-size: 0.9rem; color: #777; }
 
+/* Studio Photo Grid (Bento Box) */
+.studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto; }
+.photo-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+.photo-card:hover { transform: scale(1.02); }
+.photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-overlay { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); padding: 30px 20px 20px 20px; color: white; }
+.photo-title { font-size: 1.2rem; font-weight: bold; display: block; margin-bottom: 5px; }
+.photo-desc { font-size: 0.9rem; opacity: 0.9; font-weight: 300; }
+.grid-half { height: 400px; }
+.grid-full { grid-column: span 2; height: 500px; }
+
+/* --- Policy Styles --- */
 .policy-container { max-width: 800px; margin: 0 auto; }
 .policy-block { margin-bottom: 50px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
 .policy-block:last-child { border-bottom: none; }
@@ -173,10 +324,17 @@ header .cta-group { animation-delay: 0.5s; }
 .tuition-table th, .tuition-table td { text-align: left; padding: 15px; border-bottom: 1px solid #eee; }
 .tuition-table th { color: var(--accent-color); font-weight: normal; font-family: 'Georgia', serif; font-size: 1.1rem; }
 
-footer { background-color: #111; color: #888; text-align: center; padding: 80px 20px; margin-top: 0; }
-.contact-info p { margin: 5px 0; color: #ccc; }
+/* Payment Methods List */
+.payment-list-container { display: flex; flex-direction: column; gap: 15px; max-width: 700px; margin-top: 20px; }
+.payment-item { display: flex; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px 25px; transition: all 0.2s ease; }
+.payment-item:hover { border-color: var(--accent-color); box-shadow: 0 5px 15px rgba(0,0,0,0.03); transform: translateX(5px); }
+.payment-icon-small { font-size: 1.5rem; margin-right: 25px; width: 40px; text-align: center; line-height: 1; }
+.payment-details { flex-grow: 1; }
+.payment-details h4 { margin: 0; font-size: 1.1rem; font-weight: bold; color: var(--primary-bg); display: flex; align-items: center; gap: 10px; }
+.payment-details p { margin: 3px 0 0 0; font-size: 0.95rem; color: #666; }
+.payment-note { font-weight: bold; color: var(--accent-color); margin-left: 8px; font-style: normal; }
 
-/* --- 预约表单样式 (Booking Form) --- */
+/* --- Booking Form --- */
 .booking-form {
     max-width: 700px; margin: 0 auto;
     background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px);
@@ -189,7 +347,7 @@ footer { background-color: #111; color: #888; text-align: center; padding: 80px 
 }
 .form-section-title:first-child { margin-top: 0; }
 .form-group { margin-bottom: 25px; }
-.form-row { display: flex; gap: 20px; } /* 默认左右排列 */
+.form-row { display: flex; gap: 20px; }
 .form-row .form-group { flex: 1; }
 label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-bg); font-size: 0.9rem; }
 input, select, textarea {
@@ -200,6 +358,10 @@ input:focus, select:focus, textarea:focus {
     outline: none; border-color: var(--accent-color); background-color: #fff; box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
 }
 .submit-btn { width: 100%; margin-top: 20px; font-size: 1.2rem; padding: 18px; }
+
+/* --- Footer --- */
+footer { background-color: #111; color: #888; text-align: center; padding: 80px 20px; margin-top: 0; }
+.contact-info p { margin: 5px 0; color: #ccc; }
 
 /* --- Modal --- */
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 2000; justify-content: center; align-items: center; animation: fadeIn 0.3s ease; backdrop-filter: blur(5px); }
@@ -240,18 +402,20 @@ input:focus, select:focus, textarea:focus {
     
     .student-grid, .gallery-grid, .bio-full-container { grid-template-columns: 1fr; }
     .bio-profile { flex-direction: column; }
-    .modal-header { flex-direction: column; text-align: center; }
+    
+    /* 移动端照片墙：单列堆叠 */
+    .studio-grid { grid-template-columns: 1fr; }
+    .grid-full { grid-column: span 1; height: 300px; }
+    .grid-half { height: 300px; }
 
-    /* ！！！表单修复关键点！！！ */
-    .booking-form { 
-        padding: 30px 20px; /* 大幅减小内边距 */
-        margin-top: -30px; 
-    }
-    .form-row { 
-        flex-direction: column; /* 强制输入框上下排列 */
-        gap: 0; 
-    }
-    input, select, textarea { 
-        font-size: 16px; /* 防止 iOS 放大 */
-    }
+    /* 移动端支付列表 */
+    .payment-item { padding: 15px; }
+    .payment-icon-small { font-size: 1.3rem; margin-right: 15px; width: 30px; }
+    .payment-details h4 { font-size: 1rem; flex-direction: column; align-items: flex-start; gap: 2px; }
+    .payment-note { margin-left: 0; font-size: 0.9rem; }
+
+    /* 表单修复 */
+    .booking-form { padding: 30px 20px; margin-top: -30px; }
+    .form-row { flex-direction: column; gap: 0; }
+    input, select, textarea { font-size: 16px; }
 }
